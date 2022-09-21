@@ -12,7 +12,7 @@ function drawWeather(d) {
 function getData(city) {
   document.getElementsByClassName(`animation`)[0].setAttribute(`id`, ``);
   fetch(
-    "http://api.openweathermap.org/data/2.5/weather?q=" +
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
       city +
       "&APPID=" +
       WEATHER_KEY,
