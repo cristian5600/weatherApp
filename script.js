@@ -10,6 +10,7 @@ function drawWeather(d) {
 }
 
 function getData(city) {
+  document.getElementsByClassName(`animation`)[0].setAttribute(`id`, ``);
   fetch(
     "http://api.openweathermap.org/data/2.5/weather?q=" +
       city +
@@ -22,12 +23,15 @@ function getData(city) {
     })
     .then(function (response) {
       //console.log(response)
+      document
+        .getElementsByClassName(`animation`)[0]
+        .setAttribute(`id`, `hidden`);
       drawWeather(response);
       console.log(response.main);
       return response.main;
     })
     .catch((error) => {
-      alert(`wrong location`);
+      alert(`${city} not found`);
     });
 }
 
